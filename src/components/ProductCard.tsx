@@ -58,13 +58,15 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
           <div className="absolute inset-x-0 bottom-0 p-6 translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
             {product.isPreorder ? (
               <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    className="w-full rounded-xl bg-primary font-bold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 hover:shadow-primary/40"
-                  >
-                    {buttonContent}
-                  </Button>
-                </DialogTrigger>
+                <DialogTrigger
+                  render={
+                    <Button
+                      className="w-full rounded-xl bg-primary font-bold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 hover:shadow-primary/40"
+                    >
+                      {buttonContent}
+                    </Button>
+                  }
+                />
                 <DialogContent className="glass border-border sm:max-w-md">
                   <DialogHeader>
                     <DialogTitle className="text-2xl font-black tracking-tighter text-foreground">PREORDINE</DialogTitle>
